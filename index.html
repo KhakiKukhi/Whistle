@@ -8,7 +8,7 @@
             }
 
             body {
-                margin-bottom: 5em;
+                margin-bottom: 10em;
             }
 
             #countdown {
@@ -117,11 +117,15 @@
             }
 
             .note.highlight {
-                background: #FFFF00FF;
+                background: #dcdc00;
             }
 
             .note.upcoming {
                 background: rgb(0 0 0 / 0.2);
+            }
+
+            .note.flip > div {
+                transform: scaleY(-1);
             }
 
 
@@ -301,6 +305,14 @@
                         >
                         Loop
                     </label>
+
+                    <label>
+                        <input
+                            id="flipInput"
+                            type="checkbox"
+                        >
+                        Flip fingering
+                    </label>
                 </div>
 
             <div id="button_group">
@@ -331,82 +343,98 @@
 
         <div class="notes_container">
             <div class="note">
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
+                <div>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                </div>
                 <p>D</p>
             </div>
 
             <div class="note">
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>E</p>
             </div>
 
             <div class="note">
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>F#</p>
             </div>
 
             <div class="note">
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>G</p>
             </div>
 
             <div class="note">
-                <p>⬤</p>
-                <p>⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>A</p>
             </div>
 
             <div class="note">
-                <p>⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p>⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>B</p>
             </div>
 
             <div class="note">
-                <p class="whitetext">⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p class="whitetext">⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>C</p>
             </div>
 
             <div class="note">
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>C#</p>
             </div>
 
@@ -418,82 +446,98 @@
 
         <div class="notes_container">
             <div class="note">
-                <p class="whitetext">⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
+                <div>
+                    <p class="whitetext">⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                </div>
                 <p>d</p>
             </div>
 
             <div class="note">
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>e</p>
             </div>
 
             <div class="note">
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>f#</p>
             </div>
 
             <div class="note">
-                <p>⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>g</p>
             </div>
 
             <div class="note">
-                <p>⬤</p>
-                <p>⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>a</p>
             </div>
 
             <div class="note">
-                <p>⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p>⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>b</p>
             </div>
 
             <div class="note">
-                <p class="whitetext">⬤</p>
-                <p>⬤</p>
-                <p>⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p class="whitetext">⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>c</p>
             </div>
 
             <div class="note">
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
-                <p class="whitetext">⬤</p>
+                <div>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                    <p class="whitetext">⬤</p>
+                </div>
                 <p>c#</p>
             </div>
         </div>
@@ -955,6 +999,19 @@
                     );
                 }
             }
+
+            document
+            .getElementById("flipInput")
+            .addEventListener("change", event => {
+                document
+                    .querySelectorAll(".note")
+                    .forEach(note => {
+                        note.classList.toggle(
+                            "flip",
+                            event.target.checked
+                        );
+                    });
+            });
         </script>
 
         <script>
