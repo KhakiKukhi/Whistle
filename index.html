@@ -96,12 +96,19 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
+
+                padding-bottom: 1em;
+            }
+
+            .blank {
+                opacity: 0;
             }
 
             .note {
                 font-size: 1.5em;
 
                 padding: 0 0.75em;
+                padding-top: 0.2em;
                 margin: 0 0.25em;
 
                 background-color: #ff7a4b;
@@ -310,6 +317,7 @@
                         <input
                             id="flipInput"
                             type="checkbox"
+                            checked
                         >
                         Flip fingering
                     </label>
@@ -339,9 +347,19 @@
             </div>
         </div>
 
-        <h3 class="subheader">1st Octave</h3>
-
         <div class="notes_container">
+            <div class="note">
+                <div>
+                    <p class="blank">⬤</p>
+                    <p class="blank">⬤</p>
+                    <p class="blank">⬤</p>
+                    <p class="blank">⬤</p>
+                    <p class="blank">⬤</p>
+                    <p class="blank">⬤</p>
+                </div>
+                <p>_</p>
+            </div>
+
             <div class="note">
                 <div>
                     <p>⬤</p>
@@ -441,9 +459,6 @@
         </div>
 
 
-
-        <h3 class="subheader">2nd Octave</h3>
-
         <div class="notes_container">
             <div class="note">
                 <div>
@@ -540,6 +555,18 @@
                 </div>
                 <p>c#</p>
             </div>
+
+            <div class="note">
+                <div>
+                    <p class="whitetext">⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                    <p>⬤</p>
+                </div>
+                <p>d'</p>
+            </div>
         </div>
 
         <div id="songsModal" class="modal">
@@ -590,8 +617,8 @@
                         continue;
                     }
 
-                    // Only A-G / a-g are notes.
-                    if (!/[A-Ga-g]/.test(char)) {
+                    // Only A-G / a-g and "_" are notes.
+                    if (!/[A-Ga-g_]/.test(char)) {
                         i++;
                         continue;
                     }
@@ -607,20 +634,36 @@
                         i++;
                     }
 
+                    // Include optional octave apostrophes.
+                    while (input[i] === "'") {
+                        note += "'";
+                        i++;
+                    }
+
                     // Default duration = one time unit.
                     let duration = 1;
 
                     // Optional numeric multiplier:
                     // E2 = 2 units
                     // D4 = 4 units
+                    // D0.5 = 1/2 units
                     let number = "";
+                    let hasDecimalPoint = false;
 
-                    while (i < input.length && /[0-9]/.test(input[i])) {
-                        number += input[i];
-                        i++;
+                    while (i < input.length) {
+                        if (/[0-9]/.test(input[i])) {
+                            number += input[i];
+                            i++;
+                        } else if (input[i] === "." && !hasDecimalPoint) {
+                            number += input[i];
+                            hasDecimalPoint = true;
+                            i++;
+                        } else {
+                            break;
+                        }
                     }
 
-                    if (number) {
+                    if (number && number !== ".") {
                         duration *= Number(number);
                     }
 
@@ -1000,18 +1043,21 @@
                 }
             }
 
-            document
-            .getElementById("flipInput")
-            .addEventListener("change", event => {
+            const flipInput = document.getElementById("flipInput");
+
+            function updateFlip() {
                 document
                     .querySelectorAll(".note")
                     .forEach(note => {
                         note.classList.toggle(
                             "flip",
-                            event.target.checked
+                            flipInput.checked
                         );
                     });
-            });
+            }
+
+            flipInput.addEventListener("change", updateFlip);
+            updateFlip();
         </script>
 
         <script>
@@ -1019,9 +1065,9 @@
                 {
                     name: "Britches Full of Stitches",
                     sequence: `|: G>A BG | AG BG | G>A BG | AG E2 |
-G>A BG | AG Bd | G>A GE | ED D2 :|
+G>A BG | AG Bd' | G>A GE | ED D2 :|
 
-|: d>e dB | AG AB | d>e dB | AG E2 |
+|: d'>e d'B | AG AB | d'>e d'B | AG E2 |
 d>e dB | AG AB | G>A GE | ED D2 :|`
                 },
 
@@ -1033,6 +1079,11 @@ d>e dB | AG AB | G>A GE | ED D2 :|`
                 {
                     name: "Example Song",
                     sequence: `|: D E F G | A2 A2 :|`
+                },
+
+                {
+                    name: "Ladder",
+                    sequence: `D E F# G A B C C# d d C# C B A G F# E D`
                 }
             ];
 
